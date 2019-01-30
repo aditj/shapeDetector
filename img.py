@@ -1,9 +1,6 @@
 import cv2
 import numpy as np
 import imutils
-import os
-
-path="~/Documents/cod/"
 kernel=np.ones((5,5),np.uint8)
 image=cv2.imread("45.png")
 hsvimage=cv2.cvtColor(image,cv2.COLOR_BGR2HSV)
@@ -29,7 +26,7 @@ def win_col(max_value,min_value,name):
         else:
             text="circle"
         cv2.drawContours(image1, [c], -1, (0, 255, 0), 2)
-        cv2.putText(image1, text, (cX, cY),cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+        cv2.putText(image1, text, (cX, cY),cv2.FONT_HERSHEY_TRIPLEX, 0.5, (255, 255, 255), 2)
     cv2.imwrite(name+'.jpg', image1)
     cv2.imshow("image",image)
     cv2.imshow(name+ " Coloured Objects",image1)
